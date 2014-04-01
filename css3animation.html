@@ -1,0 +1,174 @@
+
+<!-- Annie Park -->
+<!-- Drawing on the Web -->
+<!-- Assignment 2: CSS3 Animation -->
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3 Animation</title>
+
+		<!-- Styling my elements -->
+		<style>
+			a {
+				display: block;
+				background-image: url(filmstrip.jpg);
+				height: 300px;
+				width: 990px;
+				margin-top: 20px;
+				transition-property: background-position;
+				transition-duration: 3s;
+			}
+
+			a:hover {
+				background-position: -1980px 0;
+			}
+
+			a:active {
+				background-position: -900px 0;
+			}
+
+			.square{
+				width:100px;
+				height: 100px;
+				position: relative;
+				animation: colors 5s;
+				-webkit-animation: colors 5s;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+			}
+
+			/* Down right up right pattern all the way to the right side, while changing colors */
+			@keyframes colors{
+				0% {background: rgb(188, 143, 143); left: 0px; top: 0px;}
+				10% {background: rgb(205, 92, 92); left: 0px; top: 100px;}
+				20% {background: rgb(139, 69, 19); left:178px; top: 100px;}
+				30% {background: rgb(160, 82, 45); left: 178px; top: 0px;}
+				40% {background: rgb(205, 133, 63); left: 356px; top: 0px;}
+				50% {background: rgb(222, 184, 135); left: 356px; top: 100px;}
+				60% {background: rgb(245, 245, 220); left: 534px; top: 100px;}
+				70% {background: rgb(244, 164, 96); left: 534px; top: 0px;}
+				80% {background: rgb(210, 180, 140); left: 712px; top: 0px;}
+				90% {background: rgb(210, 105, 30); left: 712px; top: 100px;}
+				100% {background: rgb(178, 34, 34); left: 890px; top: 100px;}
+			}
+
+			@-webkit-keyframes colors{
+				0% {background: rgb(188, 143, 143); left: 0px; top: 0px;}
+				10% {background: rgb(205, 92, 92); left: 0px; top: 100px;}
+				20% {background: rgb(139, 69, 19); left:178px; top: 100px;}
+				30% {background: rgb(160, 82, 45); left: 178px; top: 0px;}
+				40% {background: rgb(205, 133, 63); left: 356px; top: 0px;}
+				50% {background: rgb(222, 184, 135); left: 356px; top: 100px;}
+				60% {background: rgb(245, 245, 220); left: 534px; top: 100px;}
+				70% {background: rgb(244, 164, 96); left: 534px; top: 0px;}
+				80% {background: rgb(210, 180, 140); left: 712px; top: 0px;}
+				90% {background: rgb(210, 105, 30); left: 712px; top: 100px;}
+				100% {background: rgb(178, 34, 34); left: 890px; top: 100px;}
+			}
+
+			.container {
+				width: 200px;
+				margin-left: 0px;
+				margin-top: 200px;
+				perspective: 800px;
+				-webkit-perspective: 800px;
+				perspective-origin: -400px 400px;
+				-webkit-perspective-origin: -400px 400px;
+			}
+
+			.cube {
+				position: relative;
+				width: 200px;
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				transition-duration: 1s;
+				transition-timing-function: ease;
+				-webkit-transition-timing-function: ease;
+				transition-delay: 250ms;
+				-webkit-transition-delay: 250ms;*/
+				transition: all 1s ease 250ms;
+			}
+
+			.cube:hover{
+				background-image: url(city2.jpg);
+				transform:translateX(300px) rotate(360deg);
+				-webkit-transform:translateX(400px) rotate(360deg);
+			}
+
+			.cube div {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				opacity: .7;
+				background-image: url(city2.jpg);
+			}
+
+			.back {
+				background-color: red;
+				transform: translateZ(-100px) rotateY(180deg);
+				-webkit-transform: translateZ(-100px) rotateY(180deg);
+			}
+
+			.right {
+				background-color: orange;
+				transform: rotateY(-270deg) translateX(100px);
+				-webkit-transform: rotateY(-270deg) translateX(100px);
+				transform-origin: top right;
+				-webkit-transform-origin: top right;
+			}
+
+			.left {
+				background-color: yellow;
+				transform: rotateY(270deg) translateX(-100px);
+				-webkit-transform: rotateY(270deg) translateX(-100px);
+				transform-origin: center left;
+				-webkit-transform-origin: center left;
+			}
+
+			.top {
+				background-color: green;
+				transform: rotateX(-90deg) translateY(-100px);
+				-webkit-transform: rotateX(-90deg) translateY(-100px);
+				transform-origin: top center;
+				-webkit-transform-origin: top center;
+			}
+
+			.bottom {
+				background-color: blue;
+				transform: rotateX(90deg) translateY(100px);
+				-webkit-transform: rotateX(90deg) translateY(100px);
+				transform-origin: bottom center;
+				-webkit-transform-origin: bottom center;
+			}
+
+			.front {
+				background-color: purple;
+				transform: translateZ(100px);
+				-webkit-transform: translateZ(100px);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<a href="index.html"></a>
+
+		<div class="square"></div>
+
+		<div class="container">
+			<div class="cube">
+				<div class="front"></div>
+				<div class="back"></div>
+				<div class="top"></div>
+				<div class="bottom"></div>
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
